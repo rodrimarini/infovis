@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<!doctype html>
+<meta charset="utf-8">
+
+<!-- load D3js -->
+<script src="//d3plus.org/js/d3.js"></script>
+
+<!-- load D3plus after D3js -->
+<script src="//d3plus.org/js/d3plus.js"></script>
+
+<!-- create container element for visualization -->
+<div id="viz"></div>
+
+<script>
+  // sample data array
+    var sample_data = 
+        [{"name":"Ingeniero Industrial","value":3220},
+      {"name":"Ingeniero Electronico","value":1046},
+                       {"name":"Ingeniero Quimico","value":508},
+                       {"name":"Ingeniero Mecanico","value":495},
+                       {"name":"Ingeniero en Informatica","value":370},
+                       {"name":"Lic.en Administracion y Sistemas","value":338},
+                       {"name":"Ingeniero en Petroleo","value":259},
+                       {"name":"Licenciado en Oceanografi­a","value":115},
+                       {"name":"Licenciado en Analisis de Sistemas","value":110},
+                       {"name":"Ingeniero Naval","value":93},
+                       {"name":"Licenciado en Informatica","value":88},
+                       {"name":"Ingeniero Electrico","value":62},
+                       {"name":"Ingeniero en Armas","value":30},
+                       {"name":"Licenciado en Hidrografi­a","value":16},
+                       {"name":"Ingeniero Metalurgico","value":7},
+                       {"name":"Licenciado en Ciencias Meteorologicas","value":1}]
+  // instantiate d3plus
+  var visualization = d3plus.viz()
+    .container("#viz")  // container DIV to hold the visualization
+    .data(sample_data)  // data to use with the visualization
+    .type("pie")   // visualization type
+    .id("name")         // key for which our data is unique on
+    .size("value")      // sizing of blocks
+    .draw()             // finally, draw the visualization!
+
+</script>
+</body>
+</html>
